@@ -161,8 +161,8 @@ h3 {
 }
 
 .profile-image img {
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid rgba(255, 255, 255, 0.3);
@@ -239,11 +239,14 @@ section {
 
 .education-item ul, .experience-item ul, .project-item ul {
   margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 20px;
 }
 
 .education-item li, .experience-item li, .project-item li {
-  margin: 5px 0;
+  margin: 8px 0;
   line-height: 1.6;
+  padding-left: 5px;
 }
 
 /* Skills Section */
@@ -295,41 +298,82 @@ section {
   .nav-container {
     flex-direction: column;
     gap: 10px;
+    padding: 12px 15px;
+  }
+  
+  .nav-brand {
+    font-size: 1.1em;
   }
   
   .nav-menu {
     gap: 15px;
-    font-size: 0.9em;
+    font-size: 0.85em;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .profile-section {
     margin: 0 -10px 30px -10px;
-    padding: 30px 20px;
+    padding: 30px 15px;
   }
   
   .profile-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-content h1 {
+    font-size: 1.8em;
+  }
+  
+  .profile-content .title {
+    font-size: 1.1em;
+  }
+  
+  .profile-content .affiliation {
+    font-size: 1em;
+  }
+  
+  .contact-info {
+    text-align: center;
+    font-size: 0.9em;
   }
   
   .profile-image {
     order: -1;
+    margin: 0 auto;
   }
   
   .profile-image img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   
   h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   
   h2 {
     font-size: 1.5em;
   }
   
+  h3 {
+    font-size: 1.2em;
+  }
+  
   .education-item, .experience-item, .project-item {
     padding: 15px;
+  }
+  
+  .about p {
+    text-align: left;
+    font-size: 1em;
   }
 }
