@@ -4,25 +4,12 @@ email: jiaoyiran0720@outlook.com
 description: >-
   AI Product Manager | Multimodal AI & Data Science Researcher
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-github_username: your-github-username
+url: "https://yiranjiao.github.io" # the base hostname & protocol for your site
+github_username: yiranjiao
 
 # Build settings
 markdown: kramdown
 theme: minima
-
-# Personal info
-author:
-  name: Yiran Jiao
-  email: jiaoyiran0720@outlook.com
-  phone: +86 13620467243
-  location: Beijing, China
-
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
 
 # Exclude from processing
 exclude:
@@ -33,3 +20,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - DEPLOYMENT_GUIDE.md
+  - GITHUB_PAGES_SETUP.md
+  - VIEWING_INSTRUCTIONS.md
+  - README.md
+  - preview.html
