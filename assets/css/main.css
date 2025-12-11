@@ -293,13 +293,13 @@ section {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   body {
-    padding: 70px 10px 10px 10px;
+    padding: 80px 10px 10px 10px; /* Increased from 70px to 80px */
   }
   
   .nav-container {
     flex-direction: column;
     gap: 10px;
-    padding: 12px 15px;
+    padding: 10px 15px; /* Reduced padding */
   }
   
   .nav-brand {
@@ -315,7 +315,7 @@ section {
   
   .profile-section {
     margin: 0 -10px 30px -10px;
-    padding: 30px 15px;
+    padding: 40px 15px 30px 15px; /* Increased top padding from 30px to 40px */
   }
   
   .profile-grid {
@@ -349,11 +349,11 @@ section {
   
   .profile-image {
     order: -1;
-    margin: 0 auto;
+    margin: 0 auto 15px auto; /* Added bottom margin */
   }
   
   .profile-image img {
-    width: 160px;  /* 20% smaller than 200px */
+    width: 160px;
     height: 160px;
   }
   
