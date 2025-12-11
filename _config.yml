@@ -1,0 +1,35 @@
+# Site settings
+title: Yiran Jiao
+email: jiaoyiran0720@outlook.com
+description: >-
+  AI Product Manager | Multimodal AI & Data Science Researcher
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+github_username: your-github-username
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Personal info
+author:
+  name: Yiran Jiao
+  email: jiaoyiran0720@outlook.com
+  phone: +86 13620467243
+  location: Beijing, China
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yiran Jiao - Academic Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+
+        section {
+            scroll-margin-top: 70px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-brand {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            font-family: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        .nav-menu li {
+            margin: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+            font-family: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+        }
+
+        .nav-menu a:hover {
+            color: #3498db;
+        }
+
+        body {
+            font-family: 'Open Sans', 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 20px 20px 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.3em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+
+        .profile-section {
+            background: 
+                linear-gradient(rgba(80, 80, 80, 0.75), rgba(80, 80, 80, 0.75)),
+                url('assets/header-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 40px;
+            margin: 0 -20px 40px -20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-section h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            margin: 10px 0;
+            opacity: 0.95;
+        }
+
+        .affiliation {
+            font-size: 1.1em;
+            margin: 5px 0 20px 0;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            margin-bottom: 3em;
+        }
+
+        .about p {
+            text-align: justify;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 1em;
+        }
+
+        .research-interests ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .research-interests li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .research-interests li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 2em;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+
+        .education-item h3, .experience-item h3, .project-item h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .institution, .company {
+            font-style: italic;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .date {
+            color: #777;
+            font-size: 0.95em;
+            margin: 5px 0;
+        }
+
+        .department {
+            color: #555;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+
+        .project-title {
+            margin: 10px 0;
+        }
+
+        .education-item ul, .experience-item ul, .project-item ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .education-item li, .experience-item li, .project-item li {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .skills p {
+            margin: 15px 0;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .cv-download {
+            text-align: center;
+            margin-top: 3em;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background: #2980b9;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 70px 10px 10px 10px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-menu {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+            
+            .profile-section {
+                margin: 0 -10px 30px -10px;
+                padding: 30px 20px;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .profile-image {
+                order: -1;
+            }
+            
+            .profile-image img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Yiran Jiao</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="assets/Yiran_CV.pdf" target="_blank">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-grid">
+                <div class="profile-content">
+                    <h1>Yiran Jiao</h1>
+                    <p class="title">AI Product Manager & Researcher</p>
+                    <p class="affiliation">Kwai Technology Co., Ltd | Beijing, China</p>
+                    
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> <a href="mailto:jiaoyiran0720@outlook.com">jiaoyiran0720@outlook.com</a></p>
+                        <p><strong>Phone:</strong> +86 13620467243</p>
+                        <p><strong>Location:</strong> Beijing, China</p>
+                    </div>
+                </div>
+                <div class="profile-image">
+                    <img src="assets/profile.jpg" alt="Yiran Jiao">
+                </div>
+            </div>
+        </div>
+
+        <section class="about" id="about">
+            <h2>About Me</h2>
+            <p>
+                I am an AI Product Manager at Kwai Technology, working at the intersection of artificial intelligence and product innovation. 
+                My research interests lie in multimodal large language models, generative modeling, and data-driven representation learning, 
+                with a focus on advancing robust and generalizable intelligent systems.
+            </p>
+            <p>
+                Currently, I am developing cutting-edge digital human livestreaming systems that generate significant commercial value 
+                through multimodal AI technologies. My work combines technical expertise in machine learning with strategic product 
+                management to deliver scalable AI solutions.
+            </p>
+        </section>
+
+        <section class="research-interests" id="research">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>Multimodal Large Language Models</li>
+                <li>Generative Modeling & Video Generation</li>
+                <li>Data-Driven Representation Learning</li>
+                <li>Retrieval-Augmented Generation (RAG)</li>
+                <li>Conversational AI & Knowledge Systems</li>
+            </ul>
+        </section>
+
+        <section class="education" id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <h3>Master of Science in Health Data Science</h3>
+                <p class="institution">The University of Manchester, UK</p>
+                <p class="date">September 2021 - September 2022</p>
+                <ul>
+                    <li>All major courses passed with Merit</li>
+                    <li>Dissertation: Correlation between Behavioral Sensing and Ecological Momentary Assessment in Schizophrenia Patients based on Smartphone Data</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Bachelor of Science in Statistics</h3>
+                <p class="institution">Beijing Normal University - Hong Kong Baptist University United International College</p>
+                <p class="date">September 2017 - June 2021</p>
+                <ul>
+                    <li>Major GPA: 3.51/4.00</li>
+                    <li>Award: 2020-2021 First-class Scholarship (Top 3%)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>AI Product Manager</h3>
+                <p class="company">Kwai Technology Co., Ltd, Beijing, China</p>
+                <p class="date">June 2025 - Present</p>
+                <p class="department">Commercial Product Department</p>
+                <p class="project-title"><strong>Digital Human Livestreaming</strong></p>
+                <ul>
+                    <li>Delivered automated livestreaming system generating $0.57M/day in advertising revenue and $1.41M/day in GMV</li>
+                    <li>Designed multi-agent orchestration architecture for multimodal content generation and automated session management</li>
+                    <li>Built multimodal evaluation framework for text-audio-vision coherence and generation quality consistency</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>AI Product Manager</h3>
+                <p class="company">BYD Co., Ltd, Shenzhen, China</p>
+                <p class="date">December 2022 - May 2025</p>
+                <p class="department">AI Lab</p>
+                <p class="project-title"><strong>AI Customer Service System</strong></p>
+                <ul>
+                    <li>Led full product lifecycle of AI Customer Service ecosystem achieving 80%+ recommendation accuracy</li>
+                    <li>Developed customized RAG pipeline improving knowledge QA accuracy to 90%+</li>
+                    <li>Created workflow-driven agent system enabling autonomous root-cause analysis across complex scenarios</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Research Projects</h2>
+            
+            <div class="project-item">
+                <h3>Multimodal Real-Scene Digital Human Dynamic Orchestration</h3>
+                <p class="date">November 2025</p>
+                <p>
+                    Addressed major production bottlenecks in digital-human livestreaming including single-angle visual materials, 
+                    limited body motion, and unnatural interaction.
+                </p>
+                <ul>
+                    <li>Designed ASR semantic understanding pipeline for automatic video segmentation</li>
+                    <li>Leveraged Kling-V2 model for dynamic arrangement and real-time driven generation</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Custom RAG Framework for Enterprise Knowledge Systems</h3>
+                <p class="date">May 2024</p>
+                <p>
+                    Designed domain-adapted RAG architecture for New Energy Vehicles Industry achieving 90%+ answer accuracy.
+                </p>
+                <ul>
+                    <li>Built and maintained large-scale private knowledge base with 100,000+ documents</li>
+                    <li>Implemented hybrid retrieval, context-aware re-ranking, and domain term mapping strategies</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <p><strong>Programming Languages:</strong> Python, C/C++, R, SQL, MATLAB</p>
+            <p><strong>Tools & Platforms:</strong> Tableau, Machine Learning Frameworks, Data Mining Tools</p>
+            <p><strong>Specializations:</strong> RAG Systems, Multimodal AI, Conversational AI, Statistical Analysis</p>
+        </section>
+    </div>
+</body>
+</html>
