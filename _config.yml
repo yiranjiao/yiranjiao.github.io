@@ -1,10 +1,10 @@
 # Site settings
 title: Yiran Jiao
-email: jiaoyiran0720@outlook.com
+email: yiranjiao77@gmail.com
 description: >-
-  AI Product Manager | Multimodal AI & Data Science Researcher
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://yiranjiao.github.io" # the base hostname & protocol for your site
+  Technical AI Product Manager and NYU M.S. Computer Science student with 4+ years of experience shipping LLM, RAG, agentic, and multimodal AI products.
+baseurl: ""
+url: "https://yiranjiao.github.io"
 github_username: yiranjiao
 
 # Build settings
