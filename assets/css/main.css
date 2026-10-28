@@ -153,6 +153,17 @@ h3 {
   color: #2980b9; /* Darker blue on hover */
 }
 
+.profile-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.profile-links span {
+  color: #9aa8b3;
+}
+
 .profile-image {
   display: flex;
   justify-content: center;
@@ -248,6 +259,125 @@ section {
   margin: 8px 0;
   line-height: 1.6;
   padding-left: 5px;
+}
+
+/* Interactive Case Studies */
+.case-study {
+  margin-bottom: 18px;
+  background: #f8f9fa;
+  border: 1px solid #e4eaef;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.case-study:hover {
+  border-color: #cfdbe4;
+  border-left-color: #3498db;
+  box-shadow: 0 5px 16px rgba(44, 62, 80, 0.08);
+}
+
+.case-study summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.case-study summary::-webkit-details-marker {
+  display: none;
+}
+
+.case-study summary:focus-visible {
+  outline: 3px solid rgba(52, 152, 219, 0.2);
+  outline-offset: -3px;
+}
+
+.case-summary-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.case-title {
+  color: #2c3e50;
+  font-family: 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.case-subtitle {
+  color: #687783;
+  font-size: 0.92em;
+}
+
+.case-toggle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.case-toggle::before,
+.case-toggle::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 3px;
+  width: 14px;
+  height: 2px;
+  background: #3498db;
+  border-radius: 2px;
+  transition: transform 0.25s ease;
+}
+
+.case-toggle::after {
+  transform: rotate(90deg);
+}
+
+.case-study[open] .case-toggle::after {
+  transform: rotate(0deg);
+}
+
+.case-body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 20px;
+  border-top: 1px solid #e1e7ec;
+  background: #f4f7f9;
+}
+
+.case-field {
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(44, 62, 80, 0.05);
+}
+
+.case-field h3 {
+  margin: 0 0 8px;
+  color: #3498db;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-field p {
+  margin: 0;
+  color: #46535d;
+  font-size: 0.96em;
+  line-height: 1.65;
+}
+
+.case-field strong {
+  color: #2c3e50;
 }
 
 /* Skills Section */
@@ -398,6 +528,20 @@ section {
   }
   
   .education-item, .experience-item, .project-item {
+    padding: 15px;
+  }
+
+  .case-study summary {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .case-title {
+    font-size: 1.15em;
+  }
+
+  .case-body {
+    grid-template-columns: 1fr;
     padding: 15px;
   }
   
